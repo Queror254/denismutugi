@@ -1,23 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import { FooterA } from "@/components/version-a/FooterA";
 
-export default function WorkPageA() {
+export default function WorkPage() {
   return (
-    <div className="min-h-screen bg-black px-4 pb-12 pt-24">
-      <div className="columns-1 gap-3 sm:columns-2 lg:columns-3">
+    <div className="bg-black">
+      <div className="columns-1 gap-3 px-10 pb-16 pt-24 sm:columns-2 lg:columns-3 md:px-24 lg:px-40">
         {projects.map((project) => (
           <Link
             key={project.slug}
-            href={`/a/work/${project.slug}`}
+            href={`/work/${project.slug}`}
             className="group relative mb-3 block overflow-hidden"
           >
-            <div
-              className="relative w-full"
-              style={{
-                aspectRatio: project.category === "photo" ? "3/4" : "16/9",
-              }}
-            >
+            <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
               <Image
                 src={project.thumbnail}
                 alt={project.title}
@@ -32,6 +28,7 @@ export default function WorkPageA() {
           </Link>
         ))}
       </div>
+      <FooterA />
     </div>
   );
 }

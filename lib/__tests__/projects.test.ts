@@ -18,7 +18,7 @@ describe("getFeaturedProjects", () => {
 
 describe("getProjectBySlug", () => {
   it("returns the correct project for a known slug", () => {
-    expect(getProjectBySlug("home-again")?.title).toBe("Home Again");
+    expect(getProjectBySlug("lia")?.title).toBe("Lia");
   });
   it("returns undefined for an unknown slug", () => {
     expect(getProjectBySlug("does-not-exist")).toBeUndefined();
@@ -37,11 +37,11 @@ describe("getProjectsByCategory", () => {
 
 describe("getAdjacentProjects", () => {
   it("returns the requested count", () => {
-    expect(getAdjacentProjects("home-again", 2)).toHaveLength(2);
+    expect(getAdjacentProjects("lia", 2)).toHaveLength(2);
   });
   it("does not include the source project", () => {
-    const adj = getAdjacentProjects("home-again", 2);
-    expect(adj.every((p) => p.slug !== "home-again")).toBe(true);
+    const adj = getAdjacentProjects("lia", 2);
+    expect(adj.every((p) => p.slug !== "lia")).toBe(true);
   });
   it("wraps around when source is the last project", () => {
     const last = projects[projects.length - 1];

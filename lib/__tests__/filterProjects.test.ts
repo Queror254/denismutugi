@@ -10,9 +10,9 @@ describe("filterProjects", () => {
     const result = filterProjects(projects, "film");
     expect(result.every((p) => p.category === "film")).toBe(true);
   });
-  it("returns only photo projects for 'photo'", () => {
-    const result = filterProjects(projects, "photo");
-    expect(result.every((p) => p.category === "photo")).toBe(true);
+  it("returns only documentary projects for 'documentary'", () => {
+    const result = filterProjects(projects, "documentary");
+    expect(result.every((p) => p.category === "documentary")).toBe(true);
   });
   it("returns only acting projects for 'acting'", () => {
     const result = filterProjects(projects, "acting");
