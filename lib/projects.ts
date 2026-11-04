@@ -13,8 +13,8 @@ export type Project = {
   featured: boolean;
 };
 
-// Thumbnails and stills use picsum.photos seeds as placeholders.
-// Replace with real image paths before launch.
+// Lia uses its real poster (public/images/portfolio). Other thumbnails and
+// stills are still picsum.photos placeholders — replace with real images.
 // YouTube IDs are placeholders — swap in real trailer IDs before launch.
 export const projects: Project[] = [
   {
@@ -22,11 +22,11 @@ export const projects: Project[] = [
     title: "Lia",
     category: "film",
     youtubeId: "bvUICmxUfIo",
-    thumbnail: "https://picsum.photos/seed/lia-film/1920/1080",
+    thumbnail: "/images/portfolio/lia-thumbnail.jpg",
     role: "Cinematographer / Editor / Actor",
     stills: [
       "https://picsum.photos/seed/lia-s1/1280/720",
-      "https://picsum.photos/seed/lia-s2/800/1067",
+      "/images/portfolio/lia-poster.jpg",
       "https://picsum.photos/seed/lia-s3/1280/720",
       "https://picsum.photos/seed/lia-s4/1280/720",
       "https://picsum.photos/seed/lia-s5/800/1067",
