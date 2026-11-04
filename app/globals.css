@@ -5,7 +5,7 @@
   --font-bebas: var(--font-bebas-nf), sans-serif;
   --font-sans: var(--font-inter-nf), system-ui, sans-serif;
 
-  /* Marquee animation for Version B ticker */
+  /* Homepage marquee — the track holds the items twice, so -50% is one full loop */
   --animate-marquee: marquee 22s linear infinite;
 }
 

@@ -4,17 +4,19 @@ import { getFeaturedProjects } from "@/lib/projects";
 import { FooterA } from "@/components/version-a/FooterA";
 import { HeroVideoA } from "@/components/version-a/HeroVideoA";
 
-const MARQUEE: Array<{ type: "text"; label: string } | { type: "image"; seed: string }> = [
-  { type: "text", label: "DIRECTOR" },
-  { type: "image", seed: "mq-lia" },
-  { type: "text", label: "FILMMAKER" },
-  { type: "image", seed: "mq-nawiri" },
+const IMG = "/images/portfolio";
+
+const MARQUEE: Array<{ type: "text"; label: string } | { type: "image"; src: string }> = [
   { type: "text", label: "CINEMATOGRAPHER" },
-  { type: "image", seed: "mq-miliki" },
-  { type: "text", label: "ACTOR" },
-  { type: "image", seed: "mq-baba" },
+  { type: "image", src: `${IMG}/frames-fadhila.jpg` },
   { type: "text", label: "EDITOR" },
-  { type: "image", seed: "mq-zawadi" },
+  { type: "image", src: `${IMG}/onset-atmospheric-lighting.jpg` },
+  { type: "text", label: "DIRECTOR" },
+  { type: "image", src: `${IMG}/frames-kigongo.jpg` },
+  { type: "text", label: "ACTOR" },
+  { type: "image", src: `${IMG}/onset-camera-movement.jpg` },
+  { type: "text", label: "FILMMAKER" },
+  { type: "image", src: `${IMG}/frames-beco.jpg` },
 ];
 
 export default function Home() {
@@ -41,15 +43,18 @@ export default function Home() {
 
       {/* Statement */}
       <section className="px-10 py-16 md:px-24 md:py-20 lg:px-40">
+        <h1 className="mb-6 text-xs uppercase tracking-[0.3em] text-white/40">
+          Denis Mutugi · Cinematographer &amp; Editor
+        </h1>
         <p className="max-w-4xl font-sans text-3xl font-bold leading-snug text-white md:text-4xl lg:text-5xl">
-          A dynamic filmmaker passionate about storytelling. Actor, producer,
-          cinematographer, and editor. Based in Nairobi, Kenya.
+          Seven years behind the lens. Narrative film, series, documentary, adverts and
+          branded content, shot with the cut in mind. Based in Nairobi, Kenya.
         </p>
       </section>
 
       {/* Marquee */}
       <div className="overflow-hidden border-y border-white/10 py-3">
-        <div className="flex animate-marquee items-center whitespace-nowrap">
+        <div className="flex w-max animate-marquee items-center whitespace-nowrap">
           {[...MARQUEE, ...MARQUEE].map((item, i) =>
             item.type === "text" ? (
               <span key={i} className="mx-10 font-bebas text-3xl tracking-wider text-white">
@@ -61,10 +66,11 @@ export default function Home() {
                 className="mx-2 inline-block h-14 w-24 flex-shrink-0 overflow-hidden align-middle"
               >
                 <Image
-                  src={`https://picsum.photos/seed/${item.seed}/192/112`}
+                  src={item.src}
                   alt=""
                   width={96}
                   height={56}
+                  sizes="96px"
                   className="h-full w-full object-cover"
                 />
               </div>

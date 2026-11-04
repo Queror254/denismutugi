@@ -5,8 +5,9 @@ import { CustomCursor } from "@/components/shared/CustomCursor";
 import { NavA } from "@/components/version-a/NavA";
 
 export const metadata: Metadata = {
-  title: "Denva International",
-  description: "Director. Filmmaker. Photographer.",
+  title: "Denis Mutugi — Cinematographer & Editor | Denva International",
+  description:
+    "Nairobi-based cinematographer and editor with seven years behind the lens: narrative film, series, documentary, adverts and branded content.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

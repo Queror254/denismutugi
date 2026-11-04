@@ -1,26 +1,31 @@
 import { FooterA } from "@/components/version-a/FooterA";
 import { ContactFormA } from "@/components/version-a/ContactFormA";
+import { CONTACT } from "@/lib/portfolio";
 
-const CONTACT_DETAILS = [
+type Line = { text: string; href?: string };
+
+const CONTACT_DETAILS: { label: string; lines: Line[] }[] = [
   {
     label: "General",
-    lines: ["mutugidenis57@gmail.com", "+254 725 007 31"],
-    href: "mailto:mutugidenis57@gmail.com",
+    lines: [
+      { text: CONTACT.email, href: `mailto:${CONTACT.email}` },
+      { text: CONTACT.phone, href: CONTACT.phoneHref },
+    ],
   },
   {
     label: "Bookings",
-    lines: ["bookings@denvainternational.com"],
-    href: "mailto:bookings@denvainternational.com",
+    lines: [{ text: "bookings@denvainternational.com", href: "mailto:bookings@denvainternational.com" }],
   },
   {
     label: "YouTube",
-    lines: ["Acting With Deno"],
-    href: "https://youtube.com/@actingwithdeno1490",
+    lines: [
+      { text: CONTACT.youtubeLabel, href: CONTACT.youtubeUrl },
+      { text: "Showreel", href: CONTACT.showreelUrl },
+    ],
   },
   {
     label: "Based In",
-    lines: ["Nairobi, Kenya"],
-    href: null,
+    lines: [{ text: CONTACT.base }],
   },
 ];
 
@@ -33,8 +38,10 @@ export default function ContactPageA() {
           Let&apos;s set things in motion
         </h1>
         <p className="mt-4 font-sans text-xl font-semibold text-white/60 md:text-2xl">
+          Available for features, series, documentaries and commercial work.
           Fill out the form below and Denis will be in touch.
         </p>
+        <p className="mt-3 text-sm italic text-white/40">References available on request.</p>
       </div>
 
       {/* Form */}
@@ -45,23 +52,23 @@ export default function ContactPageA() {
       {/* Contact details */}
       <div className="border-t border-white/10 px-10 py-16 md:px-24 lg:px-40">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4">
-          {CONTACT_DETAILS.map(({ label, lines, href }) => (
+          {CONTACT_DETAILS.map(({ label, lines }) => (
             <div key={label}>
               <p className="mb-3 text-xs uppercase tracking-[0.3em] text-white/30">{label}</p>
-              {lines.map((line, i) =>
-                i === 0 && href ? (
+              {lines.map(({ text, href }) =>
+                href ? (
                   <a
-                    key={line}
+                    key={text}
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="block text-sm text-white transition-opacity hover:opacity-60"
                   >
-                    {line}
+                    {text}
                   </a>
                 ) : (
-                  <p key={line} className="text-sm text-white/60">
-                    {line}
+                  <p key={text} className="text-sm text-white/60">
+                    {text}
                   </p>
                 )
               )}

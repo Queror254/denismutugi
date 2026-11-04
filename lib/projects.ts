@@ -23,7 +23,7 @@ export const projects: Project[] = [
     category: "film",
     youtubeId: "bvUICmxUfIo",
     thumbnail: "https://picsum.photos/seed/lia-film/1920/1080",
-    role: "Actor / Producer",
+    role: "Cinematographer / Editor / Actor",
     stills: [
       "https://picsum.photos/seed/lia-s1/1280/720",
       "https://picsum.photos/seed/lia-s2/800/1067",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       "https://picsum.photos/seed/lia-s8/1280/720",
     ],
     description:
-      "Denva International presents Lia — a drama about faith, fatherhood, and the ties that bind. Starring Denis Mutugi alongside Alfred Munyua, Kierian Popo, Maureen Koech, and Edith Ithong'o.",
+      "“We all have a father.” Denva International presents Lia — a drama about faith, fatherhood, and the ties that bind, shot and cut by Denis. Starring Denis Mutugi alongside Alfred Munyua, Kierian Popo, Maureen Koech, and Edith Ithong'o.",
     year: 2023,
     featured: true,
   },

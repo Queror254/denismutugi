@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTACT } from "@/lib/portfolio";
 
 export function FooterA() {
   return (
@@ -35,7 +36,7 @@ export function FooterA() {
             <div className="space-y-4">
               <p>
                 <a
-                  href="https://youtube.com/@actingwithdeno1490"
+                  href={CONTACT.youtubeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-base uppercase tracking-widest text-white/70 transition-opacity hover:opacity-100"
@@ -45,7 +46,7 @@ export function FooterA() {
               </p>
               <p>
                 <a
-                  href="mailto:mutugidenis57@gmail.com"
+                  href={`mailto:${CONTACT.email}`}
                   className="text-base uppercase tracking-widest text-white/70 transition-opacity hover:opacity-100"
                 >
                   Email
